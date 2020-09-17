@@ -47,3 +47,115 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 3361)
 
 
+Started GET "/" for 127.0.0.1 at 2020-09-17 11:25:42 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 80)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/alla/Projects/blog_2/public/packs
+[Webpacker] Hash: f454ff2a94a80ff351b9
+Version: webpack 4.44.1
+Time: 15772ms
+Built at: 09/17/2020 11:26:01 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-53d33f2673399c4a84fc.js    655 KiB  application  [emitted] [immutable]  application
+js/application-53d33f2673399c4a84fc.js.map    768 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-53d33f2673399c4a84fc.js js/application-53d33f2673399c4a84fc.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 770 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+Completed 200 OK in 19701ms (Views: 19699.1ms | ActiveRecord: 0.0ms | Allocations: 5556)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-17 11:34:08 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 63e65da618c46efed2d9
+Version: webpack 4.44.1
+Time: 4926ms
+Built at: 09/17/2020 11:34:18 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-b8ba030da7d5bc15af3b.js    655 KiB  application  [emitted] [immutable]  application
+js/application-b8ba030da7d5bc15af3b.js.map    768 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-b8ba030da7d5bc15af3b.js js/application-b8ba030da7d5bc15af3b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 896 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve '../stylesheets/application.js' in '/home/alla/Projects/blog_2/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 14:0-39
+
+Completed 200 OK in 9780ms (Views: 9773.9ms | ActiveRecord: 0.0ms | Allocations: 4519)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-17 11:36:18 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 665c1dc9d16e12a80f3d
+Version: webpack 4.44.1
+Time: 4285ms
+Built at: 09/17/2020 11:36:25 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d48f3c0186f99bacb1f7.js    655 KiB  application  [emitted] [immutable]  application
+js/application-d48f3c0186f99bacb1f7.js.map    768 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d48f3c0186f99bacb1f7.js js/application-d48f3c0186f99bacb1f7.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 895 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+ERROR in ./app/javascript/packs/application.js
+Module not found: Error: Can't resolve './stylesheets/application.js' in '/home/alla/Projects/blog_2/app/javascript/packs'
+ @ ./app/javascript/packs/application.js 14:0-38
+
+Completed 200 OK in 7683ms (Views: 7682.1ms | ActiveRecord: 0.0ms | Allocations: 4443)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-17 11:37:04 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/alla/Projects/blog_2/public/packs
+[Webpacker] Hash: a7f2e1c7f14e2f5b3fa4
+Version: webpack 4.44.1
+Time: 12503ms
+Built at: 09/17/2020 11:37:20 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-518678a7ce0d2ad6b63e.js    1.3 MiB  application  [emitted] [immutable]  application
+js/application-518678a7ce0d2ad6b63e.js.map   1.43 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-518678a7ce0d2ad6b63e.js js/application-518678a7ce0d2ad6b63e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 893 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./app/javascript/stylesheets/application.scss 665 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 8 hidden modules
+
+Completed 200 OK in 16007ms (Views: 16003.6ms | ActiveRecord: 0.0ms | Allocations: 4623)
+
+
