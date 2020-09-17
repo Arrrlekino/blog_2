@@ -1059,3 +1059,127 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 62ms (Views: 53.6ms | ActiveRecord: 0.4ms | Allocations: 4357)
 
 
+Started GET "/" for 127.0.0.1 at 2020-09-17 17:57:43 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (9.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 46.4ms | Allocations: 4598)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 135ms (Views: 79.2ms | ActiveRecord: 9.8ms | Allocations: 10003)
+
+
+Started GET "/" for 127.0.0.1 at 2020-09-17 17:57:47 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 703)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 49.8ms | ActiveRecord: 2.8ms | Allocations: 4008)
+
+
+Started GET "/posts/design" for 127.0.0.1 at 2020-09-17 17:57:56 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"design"}
+  [1m[36mTopic Load (2.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "design"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 88.1ms | Allocations: 2926)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 387ms (Views: 120.3ms | ActiveRecord: 11.9ms | Allocations: 13545)
+
+
+Started GET "/posts/publication" for 127.0.0.1 at 2020-09-17 17:58:05 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"publication"}
+  [1m[36mTopic Load (3.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "publication"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 2]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 763)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 105ms (Views: 71.1ms | ActiveRecord: 4.3ms | Allocations: 4633)
+
+
+Started GET "/posts/detective" for 127.0.0.1 at 2020-09-17 17:58:10 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"detective"}
+  [1m[36mTopic Load (4.2ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "detective"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (5.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 4]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 89.8ms | ActiveRecord: 9.6ms | Allocations: 4603)
+
+
+Started GET "/posts/fentesy" for 127.0.0.1 at 2020-09-17 17:58:14 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"fentesy"}
+  [1m[36mTopic Load (11.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "fentesy"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 5]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 70.9ms | ActiveRecord: 11.9ms | Allocations: 4587)
+
+
+Started GET "/posts/story" for 127.0.0.1 at 2020-09-17 17:58:16 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"story"}
+  [1m[36mTopic Load (7.9ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "story"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (3.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 6]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 93ms (Views: 58.7ms | ActiveRecord: 11.3ms | Allocations: 4583)
+
+
+Started GET "/posts/design" for 127.0.0.1 at 2020-09-17 17:58:18 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"design"}
+  [1m[36mTopic Load (7.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "design"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (4.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 1]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 795)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 111ms (Views: 78.8ms | ActiveRecord: 12.1ms | Allocations: 4664)
+
+
+Started GET "/posts/fentesy" for 127.0.0.1 at 2020-09-17 17:58:50 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"fentesy"}
+  [1m[36mTopic Load (9.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "fentesy"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 5]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 74.6ms | ActiveRecord: 10.1ms | Allocations: 4593)
+
+
+Started GET "/posts/story" for 127.0.0.1 at 2020-09-17 17:58:53 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"story"}
+  [1m[36mTopic Load (6.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "story"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 6]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 108ms (Views: 67.9ms | ActiveRecord: 9.5ms | Allocations: 4597)
+
+
