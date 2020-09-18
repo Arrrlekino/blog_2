@@ -27,11 +27,11 @@
 
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
-          <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
+          <li class="page-item <% unless @has_newer %> disabled <% end %>" >
+            <a class="page-link" href="/posts/<% if @topic.present? %><%= @topic.alias %><% end %>?never=<%= @page_token %>">&larr; Older</a>
           </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
+          <li class="page-item <% unless @has_older %> disabled <% end %>">
+            <a class="page-link" href="/posts/<% if @topic.present? %><%= @topic.alias %><% end %>?older=<%= @page_token %>">Newer &rarr;</a>
           </li>
         </ul>
 
