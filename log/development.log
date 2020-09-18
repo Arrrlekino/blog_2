@@ -1183,3 +1183,360 @@ Processing by PostsController#topic as HTML
 Completed 200 OK in 108ms (Views: 67.9ms | ActiveRecord: 9.5ms | Allocations: 4597)
 
 
+Started GET "/posts/story" for 127.0.0.1 at 2020-09-18 11:59:51 +0200
+  
+SyntaxError (/home/alla/Projects/blog_2/app/controllers/posts_controller.rb:48: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/posts_controller.rb:48: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/posts_controller.rb:48: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/posts_controller.rb:48: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/posts/story" for 127.0.0.1 at 2020-09-18 12:01:30 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"story"}
+  [1m[36mTopic Load (4.9ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "story"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."topic_id" = $1[0m  [["topic_id", 6]]
+  ↳ app/views/posts/index.html.erb:14
+  Rendered posts/index.html.erb within layouts/application (Duration: 33.6ms | Allocations: 1315)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 174ms (Views: 57.9ms | ActiveRecord: 53.1ms | Allocations: 9860)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 12:01:57 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (1.9ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:11
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 971)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 61.5ms | ActiveRecord: 1.9ms | Allocations: 4417)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 12:02:55 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"", "topic_id"=>"5", "body"=>""}, "authenticity_token"=>"KLaYYaMsl6Zyle+3203XnVUmytcUOTNKde6su8ho/Dur51IYaHIbnSlJSW05eXWsnzOCwiZuP6SN/DRX2IVWnQ=="}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (2.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:11
+  Rendered posts/new.html.erb within layouts/application (Duration: 21.2ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 222ms (Views: 61.5ms | ActiveRecord: 13.3ms | Allocations: 14250)
+
+
+Started GET "/posts/create" for 127.0.0.1 at 2020-09-18 13:16:37 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"create"}
+  [1m[36mTopic Load (1.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "create"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 2.6ms | Allocations: 1717)
+
+
+  
+NoMethodError (undefined method `posts' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:8:in `topic'
+Started GET "/posts/create" for 127.0.0.1 at 2020-09-18 13:18:45 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"create"}
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "create"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.4ms | Allocations: 1611)
+
+
+  
+NoMethodError (undefined method `posts' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:8:in `topic'
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 13:19:16 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (4.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 97.8ms | Allocations: 4531)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 161ms (Views: 155.3ms | ActiveRecord: 4.5ms | Allocations: 8748)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 13:19:44 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"SZiZmKAUqMCfO96ni4LdeWABrL096KWCOqWi9tle8WDKyVPha0ok+8TneH1ptn9IqhTkqA+/qWzCtzoaybNbxg==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (2.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.1ms | Allocations: 1350)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 36.6ms | ActiveRecord: 5.3ms | Allocations: 8348)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 13:37:57 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"SZiZmKAUqMCfO96ni4LdeWABrL096KWCOqWi9tle8WDKyVPha0ok+8TneH1ptn9IqhTkqA+/qWzCtzoaybNbxg==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (1.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (4.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 40.1ms | Allocations: 1340)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 221ms (Views: 94.9ms | ActiveRecord: 10.1ms | Allocations: 8429)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 13:38:10 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1297)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 56.6ms | ActiveRecord: 0.4ms | Allocations: 4603)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 13:38:15 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"R1kYlXWfMVoubHsFvPOPhmiEhK+H/DU4YXisVH7jvdDECNLsvsG9YXWw3d9exy23opHMurWrOdaZajS4bg4Xdg==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 77ms (Views: 20.3ms | ActiveRecord: 1.8ms | Allocations: 8321)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 13:47:13 +0200
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 40.6ms | Allocations: 5138)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 119ms (Views: 86.5ms | ActiveRecord: 11.0ms | Allocations: 13080)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 13:47:16 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"deJPCOcLgdtlj4YwK0x/EoOaODnGKpbHI+mfK940rrr2s4VxLFUN4D5TIOrJeN0jSY9wLPR9minb+wfHztkEHA==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1373)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 21.2ms | ActiveRecord: 14.3ms | Allocations: 16251)
+
+
+Started GET "/posts/create" for 127.0.0.1 at 2020-09-18 14:15:17 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"create"}
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "create"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 3.0ms | Allocations: 1852)
+
+
+  
+NoMethodError (undefined method `posts' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:8:in `topic'
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 14:15:30 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (3.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 20.8ms | Allocations: 1566)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 55.6ms | ActiveRecord: 3.8ms | Allocations: 5946)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 14:15:33 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"FZTYOc80/UI6/3s/cnJyFlJYq0agaAIiBdmQ1igiyjeWxRJABGpxeWEj3eWQRtAnmE3jU5I/Dsz9ywg6OM9gkQ==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1357)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 54.8ms | ActiveRecord: 4.6ms | Allocations: 8386)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 14:18:01 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 36.2ms | Allocations: 1558)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 66.7ms | ActiveRecord: 0.4ms | Allocations: 5881)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 14:18:04 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"k100qDnh4PDFFV/qrv7XYzGiWhCgNEopD7wr1+keeOUQDP7R8r9sy57J+TBMynVS+7cSBZJjRsf3rrM7+fPSQw==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (7.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (1.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (1.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1351)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 121ms (Views: 29.4ms | ActiveRecord: 10.2ms | Allocations: 8342)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 14:18:30 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (7.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 31.1ms | Allocations: 1550)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 75ms (Views: 65.5ms | ActiveRecord: 7.7ms | Allocations: 5844)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 14:18:34 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"5Nv2vTjpVE4A8rx1To6zFW/aGqBER6i93mC6/GuI1ZNnijzE87fYdVsuGq+suhEkpc9StXYQpFMmciIQe2V/NQ==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 24.9ms | Allocations: 1353)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 119ms (Views: 48.3ms | ActiveRecord: 3.5ms | Allocations: 8369)
+
+
+Started GET "/posts/create" for 127.0.0.1 at 2020-09-18 14:26:46 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"create"}
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "create"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:7:in `topic'
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 3.5ms | Allocations: 1733)
+
+
+  
+NoMethodError (undefined method `posts' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:8:in `topic'
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 14:27:00 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (11.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 53.9ms | Allocations: 1298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 198ms (Views: 186.1ms | ActiveRecord: 11.1ms | Allocations: 4622)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 14:27:04 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"GyZFKoj29n8xeaDHYyW7RRSmQmW4ATHBzlicyN34py+Yd49TQ6h6RGqlBh2BERl03rMKcIpWPS82SgQkzRUNiQ==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (17.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (13.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (1.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 1350)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 161ms (Views: 56.4ms | ActiveRecord: 33.5ms | Allocations: 8335)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 14:27:35 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 23.8ms | Allocations: 1549)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 67.6ms | ActiveRecord: 0.5ms | Allocations: 5870)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 14:27:50 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"pCVkwvpBFbYX1RZ83suEtCjaxASdFuQuLjU61Ad1u6gndK67MR+ZjUwJsKY8/yaF4s+MEa9B6MDWJ6I4F5gRDg==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (10.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (1.1ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1351)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 103ms (Views: 21.1ms | ActiveRecord: 13.2ms | Allocations: 8350)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-09-18 14:31:29 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (0.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 5138)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 76.2ms | ActiveRecord: 9.2ms | Allocations: 13082)
+
+
+Started POST "/posts/create" for 127.0.0.1 at 2020-09-18 14:31:35 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"AxfyeK25aDcNBKY6sQoc2q6YQ3Fd/DZp0dWalvameGuARjgBZufkDFbYAOBTPr7rZI0LZG+rOocpxwJ65kvSzQ==", "post"=>{"title"=>"", "topic_id"=>"1", "body"=>""}, "commit"=>"Create"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (6.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mTopic Load (3.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/new.html.erb:10
+  Rendered posts/new.html.erb within layouts/application (Duration: 17.1ms | Allocations: 1367)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 205ms (Views: 75.9ms | ActiveRecord: 18.8ms | Allocations: 16262)
+
+
