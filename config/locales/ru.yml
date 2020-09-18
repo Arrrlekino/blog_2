@@ -1,0 +1,14 @@
+# activerecord.errors.models.user.attributes.name.blank
+ru:
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            topic:
+              required: "Такой темы не существует"
+            title:
+              blank: "Введите заголовок"
+              too_long: "Заголовок слишком длинный"
+            body:
+              blank: "Введите пост"  
