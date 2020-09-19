@@ -2613,3 +2613,32 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 99ms (Views: 43.7ms | ActiveRecord: 21.9ms | Allocations: 5400)
 
 
+Started GET "/" for ::1 at 2020-09-19 18:42:35 +0200
+  [1m[35m (17.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+Started GET "/" for ::1 at 2020-09-19 18:42:35 +0200
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (9.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 6) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 6) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (7.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  [1m[36mPost Load (5.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 578)
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 343ms (Views: 151.3ms | ActiveRecord: 17.8ms | Allocations: 18740)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 525ms (Views: 200.9ms | ActiveRecord: 90.2ms | Allocations: 24758)
+
+

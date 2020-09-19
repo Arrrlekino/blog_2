@@ -27,7 +27,7 @@
 
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
-          <li class="page-item <% unless @has_newer %> disabled <% end %>" >
+          <li class="page-item <% unless @has_newer %> disabled <% end %>">
             <a class="page-link" href="/posts/<% if @topic.present? %><%= @topic.alias %><% end %>?never=<%= @page_token %>">&larr; Older</a>
           </li>
           <li class="page-item <% unless @has_older %> disabled <% end %>">
