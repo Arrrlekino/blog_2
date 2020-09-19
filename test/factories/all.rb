@@ -13,10 +13,10 @@ FactoryBot.define do
         body { "Много информации о собачках" }
         association :topic, factory: [:topic, :story]
       end  
-      trait :about_fantasy do
+      trait :about_fentesy do
         title { "Пост о хомячках" }
         body { "Много информации о хомячках" }
-        association :topic, factory: [:topic, :fantasy]
+        association :topic, factory: [:topic, :fentesy]
       end  
       trait :about_publication do
         title { "Пост о черепашках" }
@@ -48,7 +48,7 @@ FactoryBot.define do
           title { "Фентези" }
         end  
         trait :story do
-          add_attribute(:alias) { "fentesy" }
+          add_attribute(:alias) { "story" }
           title { "Мелодрама" }
         end
         trait :story do
