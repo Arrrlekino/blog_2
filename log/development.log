@@ -3726,3 +3726,89 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 152ms (Views: 62.8ms | ActiveRecord: 11.5ms | Allocations: 8204)
 
 
+Started GET "/" for ::1 at 2020-09-20 13:11:13 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (5.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (16.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 97ms (Views: 33.3ms | ActiveRecord: 25.8ms | Allocations: 5375)
+
+
+Started GET "/" for ::1 at 2020-09-20 13:11:16 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (14.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 153ms (Views: 68.9ms | ActiveRecord: 17.3ms | Allocations: 5386)
+
+
+Started GET "/" for ::1 at 2020-09-20 13:11:29 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (2.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (6.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 233ms (Views: 111.8ms | ActiveRecord: 9.9ms | Allocations: 5379)
+
+
+Started GET "/" for ::1 at 2020-09-20 13:13:21 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (17.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 463)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 96ms (Views: 31.3ms | ActiveRecord: 20.2ms | Allocations: 6794)
+
+
+Started GET "/posts/7" for ::1 at 2020-09-20 13:13:24 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (10.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 7 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (6.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 7 and parent_id = 0) ORDER BY id[0m
+  ↳ app/views/posts/show.html.erb:38
+  Rendered posts/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 1038)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 165ms (Views: 67.8ms | ActiveRecord: 17.5ms | Allocations: 5801)
+
+
+Started GET "/posts/6" for ::1 at 2020-09-20 13:13:33 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (10.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 6 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 6 and parent_id = 0) ORDER BY id[0m
+  ↳ app/views/posts/show.html.erb:38
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 653)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 82.8ms | ActiveRecord: 12.1ms | Allocations: 5235)
+
+
