@@ -2642,3 +2642,1087 @@ Completed 200 OK in 343ms (Views: 151.3ms | ActiveRecord: 17.8ms | Allocations: 
 Completed 200 OK in 525ms (Views: 200.9ms | ActiveRecord: 90.2ms | Allocations: 24758)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(892336952976185220)[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20201000000001)
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (34.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "post_id" integer, "parent_id" integer, "body" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_post_id" ON "comments"  ("post_id")[0m
+  [1m[36mprimary::SchemaMigration Create (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201000000001"]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/edit/1" for ::1 at 2020-09-20 12:47:54 +0200
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.3) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.3) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/posts/edit/1" for ::1 at 2020-09-20 12:48:12 +0200
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.3) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.3) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-09-20 12:48:44 +0200
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.3) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.3) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(892336952976185220)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to SeedCommentsAndReplies (20201000000002)
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTopic Load (0.6ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Create (3.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "topic_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Пост о моем котике"], ["body", "Это фоточки моего котика"], ["topic_id", 1], ["created_at", "2020-09-20 10:51:37.922715"], ["updated_at", "2020-09-20 10:51:37.922715"]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (4.9ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "parent_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 7], ["parent_id", 0], ["body", "Очень милый котик"], ["created_at", "2020-09-20 10:51:37.984867"], ["updated_at", "2020-09-20 10:51:37.984867"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "parent_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 7], ["parent_id", 1], ["body", "Спасибо :)"], ["created_at", "2020-09-20 10:51:38.003335"], ["updated_at", "2020-09-20 10:51:38.003335"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "parent_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 7], ["parent_id", 1], ["body", "+1"], ["created_at", "2020-09-20 10:51:38.017980"], ["updated_at", "2020-09-20 10:51:38.017980"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "parent_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 7], ["parent_id", 0], ["body", "Как зовут котика?"], ["created_at", "2020-09-20 10:51:38.034403"], ["updated_at", "2020-09-20 10:51:38.034403"]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "parent_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 7], ["parent_id", 4], ["body", "Барсик"], ["created_at", "2020-09-20 10:51:38.048567"], ["updated_at", "2020-09-20 10:51:38.048567"]]
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201000000002"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(892336952976185220)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-09-20 12:51:48 +0200
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (20.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (8.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 445)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 295ms (Views: 97.4ms | ActiveRecord: 67.5ms | Allocations: 11570)
+
+
+Started GET "/posts/edit/1" for ::1 at 2020-09-20 12:52:29 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:31:in `edit'
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mTopic Load (6.7ms)[0m  [1m[34mSELECT "topics".* FROM "topics"[0m
+  ↳ app/views/posts/_form.html.erb:18
+  [1m[36mTopic Load (0.5ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:18
+  Rendered posts/_form.html.erb (Duration: 206.7ms | Allocations: 7467)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 212.1ms | Allocations: 7760)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 346ms (Views: 227.5ms | ActiveRecord: 21.3ms | Allocations: 14770)
+
+
+Started POST "/posts/update/1" for ::1 at 2020-09-20 12:53:27 +0200
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"FPmHCzhDAEEzF+sKv7n09dSh0OGlzGypSha5JFQO950DHWnsOwC6wFqK0RX2szAdUBM4UNGQJpaWVLrhwt/ACw==", "post"=>{"title"=>"Пост о моем котике", "topic"=>"1", "body"=>"wefgqg"}, "commit"=>"Сохранить", "id"=>"1"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+[31mUnpermitted parameter: :topic[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:51:in `update'
+  [1m[36mTopic Load (11.0ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:51:in `update'
+  [1m[36mPost Update (1.0ms)[0m  [1m[33mUPDATE "posts" SET "title" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["title", "Пост о моем котике"], ["updated_at", "2020-09-20 10:53:27.213666"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:51:in `update'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:51:in `update'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 152ms (ActiveRecord: 18.2ms | Allocations: 4922)
+
+
+Started GET "/posts/1" for ::1 at 2020-09-20 12:53:27 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (14.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 1 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1232)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 30.3ms | Allocations: 3835)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"><%= @post.title %></h1>
+
+        <!-- Author -->
+        <p class="lead">
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><%= @post.created_at %></p>
+
+        <hr>
+
+        <!-- Post Content -->
+        <%= @post.body %>
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <% @comments.each do |Comment| %>
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            <%= comment.body %>
+            <% if @replies.key?(comment.id) %>
+              <% @replies[comment.id].each do |reply| %>
+                <div class="media mt-4">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placeholder.it/50x50" alt="">
+                  <div class="media-body">
+                    <h5 class="mt-0">Commenter name</h5>
+                    <%= reply.body%>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>  
+          </div>
+        </div>
+        <% end %>
+
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+):
+1:    <div class="row">
+2:    
+3:          <!-- Post Content Column -->
+4:          <div class="col-lg-8">
+5:    
+6:            <!-- Title -->
+7:            <h1 class="mt-4"><%= @post.title %></h1>
+8:    
+9:            <!-- Author -->
+10:            <p class="lead">
+11:            </p>
+12:    
+13:            <hr>
+14:    
+15:            <!-- Date/Time -->
+16:            <p><%= @post.created_at %></p>
+17:    
+18:            <hr>
+19:    
+20:            <!-- Post Content -->
+21:            <%= @post.body %>
+22:            <hr>
+23:    
+24:            <!-- Comments Form -->
+25:            <div class="card my-4">
+26:              <h5 class="card-header">Leave a Comment:</h5>
+27:              <div class="card-body">
+28:                <form>
+29:                  <div class="form-group">
+30:                    <textarea class="form-control" rows="3"></textarea>
+31:                  </div>
+32:                  <button type="submit" class="btn btn-primary">Submit</button>
+33:                </form>
+34:              </div>
+35:            </div>
+36:    
+37:            <!-- Single Comment -->
+38:            <% @comments.each do |Comment| %>
+39:            <div class="media mb-4">
+40:              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+41:              <div class="media-body">
+42:                <h5 class="mt-0">Commenter Name</h5>
+43:                <%= comment.body %>
+44:                <% if @replies.key?(comment.id) %>
+45:                  <% @replies[comment.id].each do |reply| %>
+46:                    <div class="media mt-4">
+47:                      <img class="d-flex mr-3 rounded-circle" src="http://placeholder.it/50x50" alt="">
+48:                      <div class="media-body">
+49:                        <h5 class="mt-0">Commenter name</h5>
+50:                        <%= reply.body%>
+51:                      </div>
+52:                    </div>
+53:                  <% end %>
+54:                <% end %>  
+55:              </div>
+56:            </div>
+57:            <% end %>
+58:    
+59:            <!-- Comment with nested comments -->
+60:            <div class="media mb-4">
+61:              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+62:              <div class="media-body">
+63:                <h5 class="mt-0">Commenter Name</h5>
+64:                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+65:    
+66:                <div class="media mt-4">
+67:                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+68:                  <div class="media-body">
+69:                    <h5 class="mt-0">Commenter Name</h5>
+70:                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+71:                  </div>
+72:                </div>
+73:    
+74:                <div class="media mt-4">
+75:                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+76:                  <div class="media-body">
+77:                    <h5 class="mt-0">Commenter Name</h5>
+78:                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+79:                  </div>
+80:                </div>
+81:    
+82:              </div>
+83:            </div>
+84:    
+85:          </div>
+  
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+Started GET "/" for ::1 at 2020-09-20 12:53:57 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 92ms (Views: 30.6ms | ActiveRecord: 4.6ms | Allocations: 5388)
+
+
+Started GET "/posts/design" for ::1 at 2020-09-20 12:54:30 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"design"}
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "design"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `topic'
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (topic_id = 1) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7 AND topic_id = 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (7.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 1 AND topic_id = 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 68)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 138ms (Views: 50.8ms | ActiveRecord: 12.4ms | Allocations: 6075)
+
+
+Started GET "/posts/design" for ::1 at 2020-09-20 12:54:56 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"design"}
+  [1m[36mTopic Load (2.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "design"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `topic'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (topic_id = 1) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7 AND topic_id = 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 1 AND topic_id = 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 66)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 46.9ms | ActiveRecord: 11.0ms | Allocations: 5946)
+
+
+Started GET "/posts/publication" for ::1 at 2020-09-20 12:54:58 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"publication"}
+  [1m[36mTopic Load (0.4ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "publication"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `topic'
+  [1m[36mPost Load (9.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (topic_id = 2) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (12.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 2 AND topic_id = 2) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 2 AND topic_id = 2) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 33)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 145ms (Views: 60.7ms | ActiveRecord: 23.3ms | Allocations: 5934)
+
+
+Started GET "/posts/detective" for ::1 at 2020-09-20 12:55:04 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"detective"}
+  [1m[36mTopic Load (17.0ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "detective"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `topic'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (topic_id = 4) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 109ms (Views: 52.9ms | ActiveRecord: 17.5ms | Allocations: 4553)
+
+
+Started GET "/posts/fentesy" for ::1 at 2020-09-20 12:55:08 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"fentesy"}
+  [1m[36mTopic Load (12.9ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "fentesy"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `topic'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (topic_id = 5) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 6 AND topic_id = 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (8.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 4 AND topic_id = 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 160ms (Views: 72.8ms | ActiveRecord: 25.5ms | Allocations: 5932)
+
+
+Started GET "/posts/story" for ::1 at 2020-09-20 12:55:14 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"story"}
+  [1m[36mTopic Load (8.8ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "story"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `topic'
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (topic_id = 6) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 61.0ms | ActiveRecord: 10.3ms | Allocations: 4544)
+
+
+Started GET "/posts/some" for ::1 at 2020-09-20 12:55:18 +0200
+Processing by PostsController#topic as HTML
+  Parameters: {"topic"=>"some"}
+  [1m[36mTopic Load (0.3ms)[0m  [1m[34mSELECT "topics".* FROM "topics" WHERE "topics"."alias" = $1 LIMIT $2[0m  [["alias", "some"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:17:in `topic'
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (topic_id = 7) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 65.2ms | ActiveRecord: 2.5ms | Allocations: 4544)
+
+
+Started GET "/" for ::1 at 2020-09-20 12:55:21 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (5.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 53.6ms | ActiveRecord: 6.4ms | Allocations: 5391)
+
+
+Started GET "/posts/?older=eyJsYXJnZXN0X2lkIjo3LCJzbWFsbGVzdF9pZCI6NX0=" for ::1 at 2020-09-20 12:55:35 +0200
+Processing by PostsController#index as HTML
+  Parameters: {"older"=>"eyJsYXJnZXN0X2lkIjo3LCJzbWFsbGVzdF9pZCI6NX0="}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (4.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 2) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 49.2ms | ActiveRecord: 6.8ms | Allocations: 5448)
+
+
+Started GET "/posts/?older=eyJsYXJnZXN0X2lkIjo0LCJzbWFsbGVzdF9pZCI6Mn0=" for ::1 at 2020-09-20 12:55:48 +0200
+Processing by PostsController#index as HTML
+  Parameters: {"older"=>"eyJsYXJnZXN0X2lkIjo0LCJzbWFsbGVzdF9pZCI6Mn0="}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 2) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (6.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 25)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 42.2ms | ActiveRecord: 11.3ms | Allocations: 5365)
+
+
+Started GET "/posts/?never=eyJsYXJnZXN0X2lkIjoxLCJzbWFsbGVzdF9pZCI6MX0=" for ::1 at 2020-09-20 12:56:02 +0200
+Processing by PostsController#index as HTML
+  Parameters: {"never"=>"eyJsYXJnZXN0X2lkIjoxLCJzbWFsbGVzdF9pZCI6MX0="}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (14.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 59)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 104ms (Views: 55.2ms | ActiveRecord: 17.0ms | Allocations: 5386)
+
+
+Started GET "/" for ::1 at 2020-09-20 12:57:27 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 578)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 290ms (Views: 110.3ms | ActiveRecord: 27.5ms | Allocations: 14904)
+
+
+Started GET "/" for ::1 at 2020-09-20 12:57:37 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (14.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (3.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (4.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 60)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 176ms (Views: 77.7ms | ActiveRecord: 22.9ms | Allocations: 5405)
+
+
+Started GET "/posts/3" for ::1 at 2020-09-20 12:58:26 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (12.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 3 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 1462)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 21.3ms | Allocations: 6292)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"><%= @post.title %></h1>
+
+        <!-- Author -->
+        <p class="lead">
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><%= @post.created_at %></p>
+
+        <hr>
+
+        <!-- Post Content -->
+        <%= @post.body %>
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <% @comments.each do |Comment| %>
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            <%= comment.body %>
+            <% if @replies.key?(comment.id) %>
+              <% @replies[comment.id].each do |reply| %>
+                <div class="media mt-4">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placeholder.it/50x50" alt="">
+                  <div class="media-body">
+                    <h5 class="mt-0">Commenter name</h5>
+                    <%= reply.body%>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>  
+          </div>
+        </div>
+        <% end %>
+
+        <!-- Comment with nested comments -->
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+):
+1:    <div class="row">
+2:    
+3:          <!-- Post Content Column -->
+4:          <div class="col-lg-8">
+5:    
+6:            <!-- Title -->
+7:            <h1 class="mt-4"><%= @post.title %></h1>
+8:    
+9:            <!-- Author -->
+10:            <p class="lead">
+11:            </p>
+12:    
+13:            <hr>
+14:    
+15:            <!-- Date/Time -->
+16:            <p><%= @post.created_at %></p>
+17:    
+18:            <hr>
+19:    
+20:            <!-- Post Content -->
+21:            <%= @post.body %>
+22:            <hr>
+23:    
+24:            <!-- Comments Form -->
+25:            <div class="card my-4">
+26:              <h5 class="card-header">Leave a Comment:</h5>
+27:              <div class="card-body">
+28:                <form>
+29:                  <div class="form-group">
+30:                    <textarea class="form-control" rows="3"></textarea>
+31:                  </div>
+32:                  <button type="submit" class="btn btn-primary">Submit</button>
+33:                </form>
+34:              </div>
+35:            </div>
+36:    
+37:            <!-- Single Comment -->
+38:            <% @comments.each do |Comment| %>
+39:            <div class="media mb-4">
+40:              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+41:              <div class="media-body">
+42:                <h5 class="mt-0">Commenter Name</h5>
+43:                <%= comment.body %>
+44:                <% if @replies.key?(comment.id) %>
+45:                  <% @replies[comment.id].each do |reply| %>
+46:                    <div class="media mt-4">
+47:                      <img class="d-flex mr-3 rounded-circle" src="http://placeholder.it/50x50" alt="">
+48:                      <div class="media-body">
+49:                        <h5 class="mt-0">Commenter name</h5>
+50:                        <%= reply.body%>
+51:                      </div>
+52:                    </div>
+53:                  <% end %>
+54:                <% end %>  
+55:              </div>
+56:            </div>
+57:            <% end %>
+58:    
+59:            <!-- Comment with nested comments -->
+60:            <div class="media mb-4">
+61:              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+62:              <div class="media-body">
+63:                <h5 class="mt-0">Commenter Name</h5>
+64:                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+65:    
+66:                <div class="media mt-4">
+67:                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+68:                  <div class="media-body">
+69:                    <h5 class="mt-0">Commenter Name</h5>
+70:                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+71:                  </div>
+72:                </div>
+73:    
+74:                <div class="media mt-4">
+75:                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+76:                  <div class="media-body">
+77:                    <h5 class="mt-0">Commenter Name</h5>
+78:                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+79:                  </div>
+80:                </div>
+81:    
+82:              </div>
+83:            </div>
+84:    
+85:          </div>
+  
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+Started GET "/posts/3" for ::1 at 2020-09-20 13:02:30 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 3 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1189)
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 23.2ms | Allocations: 8981)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"><%= @post.title %></h1>
+
+        <!-- Author -->
+        <p class="lead">
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><%= @post.created_at %></p>
+
+        <hr>
+
+        <!-- Post Content -->
+        <%= @post.body %>
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Single Comment -->
+        <% @comments.each do |Comment| %>
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            <%= comment.body %>
+            <% if @replies.key?(comment.id) %>
+              <% @replies[comment.id].each do |reply| %>
+                <div class="media mt-4">
+                  <img class="d-flex mr-3 rounded-circle" src="http://placeholder.it/50x50" alt="">
+                  <div class="media-body">
+                    <h5 class="mt-0">Commenter name</h5>
+                    <%= reply.body%>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>  
+          </div>
+        </div>
+        <% end %>
+
+        <!-- Comment with nested comments 
+        <div class="media mb-4">
+          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <div class="media-body">
+            <h5 class="mt-0">Commenter Name</h5>
+            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+            <div class="media mt-4">
+              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Commenter Name</h5>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+              </div>
+            </div>
+
+          </div>
+        </div> -->
+
+      </div>
+
+):
+1:    <div class="row">
+2:    
+3:          <!-- Post Content Column -->
+4:          <div class="col-lg-8">
+5:    
+6:            <!-- Title -->
+7:            <h1 class="mt-4"><%= @post.title %></h1>
+8:    
+9:            <!-- Author -->
+10:            <p class="lead">
+11:            </p>
+12:    
+13:            <hr>
+14:    
+15:            <!-- Date/Time -->
+16:            <p><%= @post.created_at %></p>
+17:    
+18:            <hr>
+19:    
+20:            <!-- Post Content -->
+21:            <%= @post.body %>
+22:            <hr>
+23:    
+24:            <!-- Comments Form -->
+25:            <div class="card my-4">
+26:              <h5 class="card-header">Leave a Comment:</h5>
+27:              <div class="card-body">
+28:                <form>
+29:                  <div class="form-group">
+30:                    <textarea class="form-control" rows="3"></textarea>
+31:                  </div>
+32:                  <button type="submit" class="btn btn-primary">Submit</button>
+33:                </form>
+34:              </div>
+35:            </div>
+36:    
+37:            <!-- Single Comment -->
+38:            <% @comments.each do |Comment| %>
+39:            <div class="media mb-4">
+40:              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+41:              <div class="media-body">
+42:                <h5 class="mt-0">Commenter Name</h5>
+43:                <%= comment.body %>
+44:                <% if @replies.key?(comment.id) %>
+45:                  <% @replies[comment.id].each do |reply| %>
+46:                    <div class="media mt-4">
+47:                      <img class="d-flex mr-3 rounded-circle" src="http://placeholder.it/50x50" alt="">
+48:                      <div class="media-body">
+49:                        <h5 class="mt-0">Commenter name</h5>
+50:                        <%= reply.body%>
+51:                      </div>
+52:                    </div>
+53:                  <% end %>
+54:                <% end %>  
+55:              </div>
+56:            </div>
+57:            <% end %>
+58:    
+59:            <!-- Comment with nested comments 
+60:            <div class="media mb-4">
+61:              <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+62:              <div class="media-body">
+63:                <h5 class="mt-0">Commenter Name</h5>
+64:                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+65:    
+66:                <div class="media mt-4">
+67:                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+68:                  <div class="media-body">
+69:                    <h5 class="mt-0">Commenter Name</h5>
+70:                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+71:                  </div>
+72:                </div>
+73:    
+74:                <div class="media mt-4">
+75:                  <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+76:                  <div class="media-body">
+77:                    <h5 class="mt-0">Commenter Name</h5>
+78:                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+79:                  </div>
+80:                </div>
+81:    
+82:              </div>
+83:            </div> -->
+84:    
+85:          </div>
+  
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+app/views/posts/show.html.erb:38: formal argument cannot be a constant
+Started GET "/posts/3" for ::1 at 2020-09-20 13:06:12 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (6.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 3 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (6.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 3 and parent_id = 0) ORDER BY id[0m
+  ↳ app/views/posts/show.html.erb:38
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.7ms | Allocations: 998)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 66.8ms | ActiveRecord: 16.9ms | Allocations: 6615)
+
+
+Started GET "/" for ::1 at 2020-09-20 13:06:28 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 441)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 43.3ms | ActiveRecord: 3.0ms | Allocations: 6045)
+
+
+Started GET "/posts/?older=eyJsYXJnZXN0X2lkIjo3LCJzbWFsbGVzdF9pZCI6NX0=" for ::1 at 2020-09-20 13:06:37 +0200
+Processing by PostsController#index as HTML
+  Parameters: {"older"=>"eyJsYXJnZXN0X2lkIjo3LCJzbWFsbGVzdF9pZCI6NX0="}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 4) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 2) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 60)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 58.4ms | ActiveRecord: 4.2ms | Allocations: 5452)
+
+
+Started GET "/posts/?older=eyJsYXJnZXN0X2lkIjo0LCJzbWFsbGVzdF9pZCI6Mn0=" for ::1 at 2020-09-20 13:06:43 +0200
+Processing by PostsController#index as HTML
+  Parameters: {"older"=>"eyJsYXJnZXN0X2lkIjo0LCJzbWFsbGVzdF9pZCI6Mn0="}
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 2) ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (3.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (12.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 1) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 25)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 67.0ms | ActiveRecord: 17.9ms | Allocations: 5368)
+
+
+Started GET "/posts/7" for ::1 at 2020-09-20 13:07:06 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 7 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 7 and parent_id = 0) ORDER BY id[0m
+  ↳ app/views/posts/show.html.erb:38
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 694)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 152ms (Views: 62.8ms | ActiveRecord: 11.5ms | Allocations: 8204)
+
+
