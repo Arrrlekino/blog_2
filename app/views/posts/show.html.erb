@@ -22,7 +22,12 @@
         <hr>
 
         <!-- Comments Form -->
-        <div class="card my-4">
+         <%= react_component("CommentsApp", { comments: @comments, replies: @replies, csrf_token: form_authenticity_token, post_id: @post.id }) %>
+      <!--  
+    <%= react_component("CommentsApp", { comments: @comments, replies: @replies, csrf_token: form_authenticity_token, post_id: @post.id }) %>
+     -->
+     <!--   Start ruby SHABLONIZATOR
+     <div class="card my-4">
           <h5 class="card-header">Leave a Comment:</h5>
           <div class="card-body">
             <form>
@@ -34,7 +39,8 @@
           </div>
         </div>
 
-        <!-- Single Comment -->
+         Single Comment 
+
         <% @comments.each do |comment| %>
         <div class="media mb-4">
           <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
@@ -54,7 +60,9 @@
             <% end %>  
           </div>
         </div>
-        <% end %>
+        <% end %> 
+
+        end ruby shablonizator -->
 
         <!-- Comment with nested comments 
         <div class="media mb-4">
