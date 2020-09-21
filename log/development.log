@@ -4666,3 +4666,47 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-09-21 20:06:15 +0200
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ lib/services/pagination.rb:35:in `has_newer'
+  [1m[36mPost Load (12.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id > 7) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:38:in `has_newer'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (id < 5) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ lib/services/pagination.rb:46:in `has_older'
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 599)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 388ms (Views: 124.1ms | ActiveRecord: 41.1ms | Allocations: 15055)
+
+
+Started GET "/posts/7" for ::1 at 2020-09-21 20:06:23 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (5.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24:in `show'
+  [1m[36mComment Load (17.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 7 and parent_id != 0) ORDER BY parent_id, id[0m
+  ↳ app/models/comment.rb:13:in `group_by'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE (post_id = 7 and parent_id = 0) ORDER BY id[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 28.1ms | Allocations: 2367)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 250ms (Views: 65.4ms | ActiveRecord: 52.6ms | Allocations: 11326)
+
+
+Started POST "/comments/create/7" for ::1 at 2020-09-21 20:06:33 +0200
+Processing by CommentsController#create as JSON
+  Parameters: {"body"=>"1232132", "post_id"=>"7"}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:7:in `create'
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `create'
+  [1m[36mComment Create (5.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "parent_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["post_id", 7], ["parent_id", 0], ["body", "1232132"], ["created_at", "2020-09-21 18:06:33.777989"], ["updated_at", "2020-09-21 18:06:33.777989"]]
+  ↳ app/controllers/comments_controller.rb:7:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:7:in `create'
+Completed 200 OK in 132ms (Views: 1.9ms | ActiveRecord: 9.8ms | Allocations: 6048)
+
+
